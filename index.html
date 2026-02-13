@@ -1,0 +1,170 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Happy Valentine</title>
+
+<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+
+<style>
+
+body{
+    background: linear-gradient(120deg,#ff9a9e,#fad0c4);
+    overflow-x:hidden;
+    font-family: 'Segoe UI', sans-serif;
+}
+
+/* HERO */
+.hero{
+    min-height:100vh;
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    text-align:center;
+    color:white;
+    padding:20px;
+}
+
+/* GLASS CARD */
+.glass{
+    background: rgba(255,255,255,0.25);
+    backdrop-filter: blur(10px);
+    border-radius:20px;
+    padding:40px;
+    width:100%;
+    max-width:420px;
+}
+
+/* FOTO PACAR */
+.pacar-img{
+    width:160px;
+    height:160px;
+    object-fit:cover;
+    border-radius:50%;
+    border:4px solid white;
+    box-shadow:0 0 20px rgba(255,255,255,0.7);
+    margin-bottom:15px;
+}
+
+/* HEART */
+.heart{
+    position:fixed;
+    top:-10px;
+    font-size:20px;
+    animation: fall linear infinite;
+}
+
+@keyframes fall{
+    to{
+        transform:translateY(110vh);
+    }
+}
+
+/* MOBILE */
+@media(max-width:576px){
+
+.glass{
+    padding:25px;
+}
+
+.pacar-img{
+    width:120px;
+    height:120px;
+}
+
+h1{
+    font-size:1.8rem;
+}
+
+.row h5{
+    margin-top:10px;
+}
+
+}
+
+</style>
+</head>
+
+<body>
+
+<nav class="navbar navbar-dark bg-transparent fixed-top">
+<div class="container">
+<span class="navbar-brand">💖 Valentine</span>
+</div>
+</nav>
+
+<section class="hero">
+<div class="glass shadow">
+
+<img src="1000217223.jpg" class="pacar-img" alt="My Love">
+
+<h1>Happy Valentine 💕</h1>
+<p class="mt-3">Hari spesial untuk seseorang yang istimewa</p>
+
+<button class="btn btn-light mt-3 w-100" data-bs-toggle="modal" data-bs-target="#loveModal">
+Will you be my Valentine?
+</button>
+
+<div class="row mt-4">
+
+<div class="col-12 col-md-4">
+<h5>🌹 Love</h5>
+<p>Kasih sayang tulus</p>
+</div>
+
+<div class="col-12 col-md-4">
+<h5>🍫 Sweet</h5>
+<p>Momen manis bersama</p>
+</div>
+
+<div class="col-12 col-md-4">
+<h5>💌 Care</h5>
+<p>Saling perhatian</p>
+</div>
+
+</div>
+
+</div>
+</section>
+
+<!-- MODAL -->
+<div class="modal fade" id="loveModal">
+<div class="modal-dialog modal-dialog-centered">
+<div class="modal-content text-center p-4">
+
+<h3>💖 Will you be my Valentine?</h3>
+<p class="mt-3">Aku mau berbagi hari ini sama kamu.</p>
+
+<button class="btn btn-danger mt-2 w-100"
+onclick="alert('Semoga sayang selalu sama aku terus ya cintaku 💕 Aku sayang banget sama sayangg Dari Al pacar kamu ❤️❤️❤️')">
+Yes
+</button>
+
+</div>
+</div>
+</div>
+
+<footer class="text-center text-white pb-3">
+Made with ❤️ by Al
+</footer>
+
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+
+<script>
+function createHeart(){
+    const heart = document.createElement("div");
+    heart.className="heart";
+    heart.innerHTML="❤️";
+    heart.style.left=Math.random()*100+"vw";
+    heart.style.animationDuration=2+Math.random()*3+"s";
+    document.body.appendChild(heart);
+
+    setTimeout(()=>heart.remove(),5000);
+}
+
+setInterval(createHeart,300);
+</script>
+
+</body>
+</html>
